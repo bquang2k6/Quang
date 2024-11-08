@@ -13,6 +13,42 @@ function pop(imageURL) {
     toggleClass(".tc-main", "active");
     toggleClass(".tc", "active");
 }
+// Hàm cập nhật số lần truy cập
+function updateVisitorCount() {
+    // Lấy số lần truy cập từ localStorage
+    let visitCount = localStorage.getItem('visitCount');
+    
+    // Nếu chưa có giá trị nào, khởi tạo là 1, ngược lại tăng giá trị lên 1
+    if (visitCount === null) {
+        visitCount = 1;
+    } else {
+        visitCount = parseInt(visitCount) + 1;
+    }
+    
+    // Cập nhật số lần truy cập vào localStorage
+    localStorage.setItem('visitCount', visitCount);
+    
+    // Hiển thị số lần truy cập trên trang
+    document.getElementById('visitor-count').textContent = visitCount;
+}
+
+// Hàm lấy địa chỉ IP từ API miễn phí và cập nhật vào giao diện
+async function updateIPAddress() {
+    try {
+        const response = await fetch('https://api.ipify.org?format=json');
+        const data = await response.json();
+        document.getElementById('ip-address').textContent = data.ip;
+    } catch (error) {
+        document.getElementById('ip-address').textContent = 'Cannot load IP';
+        console.error("Error fetching IP:", error);
+    }
+}
+
+// Gọi các hàm khi trang được tải
+window.onload = function() {
+    updateVisitorCount();
+    updateIPAddress();
+};
 
 var tc = document.getElementsByClassName('tc');
 var tc_main = document.getElementsByClassName('tc-main');

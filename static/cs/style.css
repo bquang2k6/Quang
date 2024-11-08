@@ -591,7 +591,7 @@ section {
 
 .stat-item h2 {
     margin: 0;
-    font-size: 1.2rem;
+    font-size: 0.9rem;
     font-weight: bold;
     color: var(--theme_color);
     letter-spacing: -0.02em;
