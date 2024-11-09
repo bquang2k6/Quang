@@ -435,7 +435,7 @@ section {
 }
 
 .author_other {
-    width: 49%;
+    width: 490%;
     position: relative;
     height: 220px;
     padding: 20px 0 0 20px;
@@ -557,7 +557,7 @@ section {
 
 
 .author_div1 {
-    width: 23%;
+    width: 50%;
     height: 220px;
     position: relative;
     border-radius: var(--borer-radius);
@@ -941,11 +941,11 @@ section {
 
 
 
-    .author_div,
+    /* .author_div, */
     .author_div1 {
         order: 2;
         height: 180px;
-        width: 49%;
+        width: 100%;
 
     }
 
