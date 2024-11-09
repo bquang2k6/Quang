@@ -87,7 +87,7 @@
                 <div class="author_logo">
                     <div class="author_logo_tips">👏</div>
                 </div>
-                <h2>Hi， I ' am Quang </h2>
+                <h2>Hi,  I ' am Quang </h2>
                 <p>📖copy and paste, I ' am harker lor</p>
                 <div class="author_links">
                     <a href="https://github.com/bquang2k6" target="_blank" class="author_link">
@@ -98,7 +98,7 @@
                                 p-id="1856"></path>
                         </svg>
                     </a>
-                    <a href="mailto:phambaquang3012@gmail.com" class="author_link">
+                    <a href="mailto:phambaquang3012@gmail.com" target="_blank" class="author_link">
                         <svg t="1728105061221" class="icon" viewBox="0 0 1024 1024" version="1.1"
                             xmlns="http://www.w3.org/2000/svg" p-id="2840">
                             <path
@@ -108,7 +108,7 @@
                     </a>
 
 
-                    <a href="https:facebook.com" target="_blank" class="author_link">
+                    <a href="https://www.facebook.com/quang301226/" target="_blank" class="author_link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
 							<path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
 						  </svg>
@@ -146,7 +146,7 @@
 
 
 
-            <!-- <div class="author_div1">
+            <div class="author_div1">
                 <div class="stats">
                     <div class="stat-item">
                         <p>Visitors</p>
@@ -173,77 +173,10 @@
                         <span class="onoffswitch-switch"></span>
                     </label>
                 </div>
-            </div> -->
-            <div class="author_div1">
-                <div class="stats">
-                    <div class="stat-item">
-                        <p>Visitors</p>
-                        <h2 id="visitor-count">Loading...</h2>
-                    </div>
-                    <div class="stat-item">
-                        <p>.</p>
-                        <!-- <h2>.</h2> -->
-                    </div>
-                    <div class="stat-item">
-                        <p>Clicks</p>
-                        <h2>2,300</h2>
-                    </div>
-                    <div class="stat-item">
-                        <p>.</p>
-                        <!-- <h2>.</h2> -->
-                    </div>
-                    <div class="stat-item">
-                        <p>IP Address</p>
-                        <h2 id="ip-address">Loading...</h2>
-                    </div>
-                </div>
-                <div class="onoffswitch">
-                    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked="">
-                    <label class="onoffswitch-label" for="myonoffswitch">
-                        <span class="onoffswitch-inner"></span>
-                        <span class="onoffswitch-switch"></span>
-                    </label>
-                </div>
             </div>
+        
             
-            <script>
-            // Hàm cập nhật số lần truy cập
-            function updateVisitorCount() {
-                // Lấy số lần truy cập từ localStorage
-                let visitCount = localStorage.getItem('visitCount');
-                
-                // Nếu chưa có giá trị nào, khởi tạo là 1, ngược lại tăng giá trị lên 1
-                if (visitCount === null) {
-                    visitCount = 1;
-                } else {
-                    visitCount = parseInt(visitCount) + 1;
-                }
-                
-                // Cập nhật số lần truy cập vào localStorage
-                localStorage.setItem('visitCount', visitCount);
-                
-                // Hiển thị số lần truy cập trên trang
-                document.getElementById('visitor-count').textContent = visitCount;
-            }
             
-            // Hàm lấy địa chỉ IP từ API miễn phí và cập nhật vào giao diện
-            async function updateIPAddress() {
-                try {
-                    const response = await fetch('https://api.ipify.org?format=json');
-                    const data = await response.json();
-                    document.getElementById('ip-address').textContent = data.ip;
-                } catch (error) {
-                    document.getElementById('ip-address').textContent = 'Cannot load IP';
-                    console.error("Error fetching IP:", error);
-                }
-            }
-            
-            // Gọi các hàm khi trang được tải
-            window.onload = function() {
-                updateVisitorCount();
-                updateIPAddress();
-            };
-            </script>
             
             
             
@@ -369,7 +302,7 @@
 
 
             <a href="./noel/index.html" target="_blank" class="article-card">
-                <img src="./static/img/5.gif" alt="erro">
+                <img src="./static/img/6.gif" alt="erro">
                 <div class="content">
                     <div class="tags"><span class="tag"> <svg t="1718801550156" class="icon" viewBox="0 0 1024 1024"
                                 version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1907">
@@ -382,31 +315,8 @@
                     <p>288</p>
                 </div>
             </a>
-
-
-
-
-            <a href="./mix/li-xi-tet.html" target="_blank" class="article-card">
-                <img src=./static/img/7.gif" alt="Quang">
-                <div class="content">
-                    <div class="tags"><span class="tag"> <svg t="1718801550156" class="icon" viewBox="0 0 1024 1024"
-                                version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1907">
-                                <path
-                                    d="M855.04 385.024q19.456 2.048 38.912 10.24t33.792 23.04 21.504 37.376 2.048 54.272q-2.048 8.192-8.192 40.448t-14.336 74.24-18.432 86.528-19.456 76.288q-5.12 18.432-14.848 37.888t-25.088 35.328-36.864 26.112-51.2 10.24l-567.296 0q-21.504 0-44.544-9.216t-42.496-26.112-31.744-40.96-12.288-53.76l0-439.296q0-62.464 33.792-97.792t95.232-35.328l503.808 0q22.528 0 46.592 8.704t43.52 24.064 31.744 35.84 12.288 44.032l0 11.264-53.248 0q-40.96 0-95.744-0.512t-116.736-0.512-115.712-0.512-92.672-0.512l-47.104 0q-26.624 0-41.472 16.896t-23.04 44.544q-8.192 29.696-18.432 62.976t-18.432 61.952q-10.24 33.792-20.48 65.536-2.048 8.192-2.048 13.312 0 17.408 11.776 29.184t29.184 11.776q31.744 0 43.008-39.936l54.272-198.656q133.12 1.024 243.712 1.024l286.72 0z"
-                                    p-id="1908"></path>
-                            </svg>Typecho</span>
-                    </div>
-                    <h3>305</h3>
-                    <p>src code </p>
-
-                </div>
-            </a>
-
-
-
-
             <a href="./mix/heart2.html" target="_blank" class="article-card">
-                <img src=./static/img/3.gif" alt="Quang">
+                <img src="./static/img/7.gif" alt="erro">
                 <div class="content">
                     <div class="tags"><span class="tag"> <svg t="1718801550156" class="icon" viewBox="0 0 1024 1024"
                                 version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1907">
@@ -415,17 +325,40 @@
                                     p-id="1908"></path>
                             </svg>Typecho</span>
                     </div>
-                    <h3>305</h3>
-                    <a></a>
-
+                    <h3>lý Thủ Khoa</h3>
+                    <p>288</p>
                 </div>
             </a>
+            <a href="./mix/li-xi-tet.html" target="_blank" class="article-card">
+                <img src="./static/img/8.gif" alt="erro">
+                <div class="content">
+                    <div class="tags"><span class="tag"> <svg t="1718801550156" class="icon" viewBox="0 0 1024 1024"
+                                version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1907">
+                                <path
+                                    d="M855.04 385.024q19.456 2.048 38.912 10.24t33.792 23.04 21.504 37.376 2.048 54.272q-2.048 8.192-8.192 40.448t-14.336 74.24-18.432 86.528-19.456 76.288q-5.12 18.432-14.848 37.888t-25.088 35.328-36.864 26.112-51.2 10.24l-567.296 0q-21.504 0-44.544-9.216t-42.496-26.112-31.744-40.96-12.288-53.76l0-439.296q0-62.464 33.792-97.792t95.232-35.328l503.808 0q22.528 0 46.592 8.704t43.52 24.064 31.744 35.84 12.288 44.032l0 11.264-53.248 0q-40.96 0-95.744-0.512t-116.736-0.512-115.712-0.512-92.672-0.512l-47.104 0q-26.624 0-41.472 16.896t-23.04 44.544q-8.192 29.696-18.432 62.976t-18.432 61.952q-10.24 33.792-20.48 65.536-2.048 8.192-2.048 13.312 0 17.408 11.776 29.184t29.184 11.776q31.744 0 43.008-39.936l54.272-198.656q133.12 1.024 243.712 1.024l286.72 0z"
+                                    p-id="1908"></path>
+                            </svg>Typecho</span>
+                    </div>
+                    <h3>lì xì nè</h3>
+                    <p>288</p>
+                </div>
+            </a>
+
+
+
+
+            
+
+
+
+
+            
 
 
 
 
             <a href="./mix/heart3.html" target="_blank" class="article-card">
-                <img src=./static/img/7.gif" alt="Quang">
+                <img src="./static/img/9.gif" alt="Quang">
                 <div class="content">
                     <div class="tags"><span class="tag"> <svg t="1718801550156" class="icon" viewBox="0 0 1024 1024"
                                 version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1907">
@@ -443,7 +376,7 @@
 
 
             <a href="./heart/index.html" target="_blank" class="article-card">
-                <img src=./static/img/7.gif" alt="Quang">
+                <img src="./static/img/10.gif" alt="Quang">
                 <div class="content">
                     <div class="tags"><span class="tag"> <svg t="1718801550156" class="icon" viewBox="0 0 1024 1024"
                                 version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1907">
@@ -458,7 +391,7 @@
                 </div>
             </a>
             <a href="./heart/index2.html" target="_blank" class="article-card">
-                <img src=./static/img/7.gif" alt="Quang">
+                <img src="./static/img/11.gif" alt="Quang">
                 <div class="content">
                     <div class="tags"><span class="tag"> <svg t="1718801550156" class="icon" viewBox="0 0 1024 1024"
                                 version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1907">
@@ -496,7 +429,6 @@
         </div>
     </div>
     <script src="./static/js/main.js"></script>
-
 </body>
 
 
