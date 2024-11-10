@@ -158,8 +158,8 @@ body {
 }
 
 .preloader-icon span:last-child {
-    animation-delay: -0.8s;
     -webkit-animation-delay: -0.8s;
+    animation-delay: -0.8s;
 }
 
 @keyframes preloader-fx {
@@ -544,7 +544,7 @@ section {
 
 
 .author_div {
-    width: 23%;
+    width: 50%;
     height: 220px;
     position: relative;
     border-radius: var(--borer-radius);
@@ -558,7 +558,7 @@ section {
 
 .author_div1 {
     width: 50%;
-    height: 220px;
+    height: 230px;
     position: relative;
     border-radius: var(--borer-radius);
     background-color: var(--card_color);
@@ -941,7 +941,7 @@ section {
 
 
 
-    /* .author_div, */
+    .author_div,
     .author_div1 {
         order: 2;
         height: 180px;
@@ -1025,8 +1025,8 @@ section {
     visibility: hidden;
     width: 100vw;
     height: 100vh;
-    backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
     background: rgba(99, 99, 99, 0.31);
     z-index: 99999;
     align-items: center;
