@@ -558,7 +558,7 @@ section {
 
 .author_div1 {
     width: 50%;
-    height: 230px;
+    height: 220px;
     position: relative;
     border-radius: var(--borer-radius);
     background-color: var(--card_color);
