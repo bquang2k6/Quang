@@ -1,0 +1,217 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>src web</title>
+    <style>
+        /* Reset default button styles */
+        button {
+            all: unset;
+            cursor: pointer;
+        }
+
+        /* Button Base Styles */
+        .button {
+            position: relative;
+            display: inline-flex;
+            height: 3.5rem;
+            align-items: center;
+            border-radius: 9999px;
+            padding-left: 2rem;
+            padding-right: 2rem;
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 640;
+            color: #fafaf6;
+            letter-spacing: -0.06em;
+            cursor: pointer;
+        }
+
+        /* Button Item */
+        .button-item {
+            background-color: transparent;
+            color: #1d1d1f;
+        }
+
+        /* Button Background */
+        .button-item .button-bg {
+            border-color: rgba(255, 208, 116);
+            background-color: rgba(255, 208, 116);
+        }
+
+        /* Inner elements */
+        .button-inner,
+        .button-inner-hover,
+        .button-inner-static {
+            pointer-events: none;
+            display: block;
+        }
+
+        .button-inner {
+            position: relative;
+        }
+
+        .button-inner-hover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transform: translateY(70%);
+        }
+
+        /* Button Background styles */
+        .button-bg {
+            overflow: hidden;
+            border-radius: 2rem;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transform: scale(1);
+            transition: transform 1.8s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        .button-bg-layers {
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%);
+            top: -60%;
+            aspect-ratio: 1 / 1;
+            width: max(200%, 10rem);
+        }
+
+        .button-bg-layer {
+            border-radius: 9999px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transform: scale(0);
+        }
+
+        /* Background Layer Colors */
+        .button-bg-layer.-purple {
+            background-color: rgba(163, 116, 255);
+        }
+
+        .button-bg-layer.-turquoise {
+            background-color: rgba(23, 241, 209);
+        }
+
+        .button-bg-layer.-red {
+            background-color: rgb(241, 50, 50);
+        }
+
+        .button-bg-layer.-yellow {
+            background-color: rgba(255, 208, 116);
+        }
+
+        /* Hover Effects */
+        .button:hover .button-inner-static {
+            opacity: 0;
+            transform: translateY(-70%);
+            transition: transform 1.4s cubic-bezier(0.19, 1, 0.22, 1), opacity 0.3s linear;
+        }
+
+        .button:hover .button-inner-hover {
+            opacity: 1;
+            transform: translateY(0);
+            transition: transform 1.4s cubic-bezier(0.19, 1, 0.22, 1), opacity 1.4s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        .button:hover .button-bg-layer {
+            transition: transform 1.3s cubic-bezier(0.19, 1, 0.22, 1), opacity 0.3s linear;
+        }
+
+        /* Sequentially animated layers on hover */
+        .button:hover .button-bg-layer-1 {
+            transform: scale(1);
+        }
+
+        .button:hover .button-bg-layer-2 {
+            transition-delay: 0.1s;
+            transform: scale(1);
+        }
+
+        .button:hover .button-bg-layer-3 {
+            transition-delay: 0.2s;
+            transform: scale(1);
+        }
+
+        .button:hover .button-bg-layer-4 {
+            transition-delay: 0.3s;
+            transform: scale(1);
+        }
+
+        /* Dropdown Styles */
+        .dropdown {
+            margin-bottom: 20px;
+            padding: 10px;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            border: 1px solid #e67878;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div style="color: rgba(84, 119, 216, 0.973);"><h2>Vui lòng chọn src code bạn muốn lấy theo thứ tự</h2></div>
+    <div class="container">
+        <!-- Dropdown for Link Selection -->
+        <select id="linkDropdown" class="dropdown">
+            <option value="https://github.com/bquang2k6/Quang/blob/bus/mix/heart/index.html">1</option>
+            <option value="https://github.com/bquang2k6/Quang/blob/bus/mix/heart.html">2</option>
+            <option value="https://github.com/bquang2k6/Quang/tree/bus/Bang_tuan_hoan_hoa_hoc">3</option>
+            <option value="https://github.com/bquang2k6/Quang/blob/bus/mix/galaxy.html">4</option>
+            <option value="https://github.com/bquang2k6/Quang/tree/bus/totinh">5</option>
+            <option value="https://github.com/bquang2k6/Quang/tree/bus/noel">6</option>
+            <option value="https://github.com/bquang2k6/Quang/blob/bus/mix/heart2.html">7</option>
+            <option value="https://github.com/bquang2k6/Quang/blob/bus/mix/li-xi-tet.html">8</option>
+            <option value="https://github.com/bquang2k6/Quang/blob/bus/mix/heart3.html">9</option>
+            <option value="https://github.com/bquang2k6/Quang/blob/bus/heart/index.html">10</option>
+            <option value="https://github.com/bquang2k6/Quang/blob/bus/mix/index2.html">11</option>
+        </select>
+
+        <!-- Button to Copy the Selected Link -->
+        <button class="button button-item" onclick="copySelectedLink()">
+            <span class="button-bg">
+                <span class="button-bg-layers">
+                    <span class="button-bg-layer button-bg-layer-1 -purple"></span>
+                    <span class="button-bg-layer button-bg-layer-2 -turquoise"></span>
+                    <span class="button-bg-layer button-bg-layer-3 -red"></span>
+                    <span class="button-bg-layer button-bg-layer-4 -yellow"></span>
+                </span>
+            </span>
+            <span class="button-inner">
+                <span class="button-inner-static">Sao chép link</span>
+                <span class="button-inner-hover">Sao chép link</span>
+            </span>
+        </button>
+    </div>
+
+    <script>
+        function copySelectedLink() {
+            // Get the selected link from the dropdown
+            const dropdown = document.getElementById("linkDropdown");
+            const selectedLink = dropdown.value;
+
+            // Copy the selected link to the clipboard
+            navigator.clipboard.writeText(selectedLink).then(() => {
+                alert("Link đã được sao chép vào clipboard: " + selectedLink);
+            }).catch(err => {
+                console.error('Không thể sao chép link: ', err);
+            });
+        }
+    </script>
+</body>
+</html>
