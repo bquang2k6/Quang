@@ -421,7 +421,7 @@ section {
 }
 
 .author_infor:before {
-    /* background: url(https://i.imgur.com/UOsY0Vs.png); */
+    background: url(https://i.imgur.com/UOsY0Vs.png);
     background-size: cover;
     background-position: center;
     bottom: 0;
@@ -458,7 +458,7 @@ section {
     position: relative;
     border-radius: 50%;
     object-fit: cover;
-    /* background: url(https://github.com/bquang2k6/Quang/blob/bus/static/img/avata.png); */
+    /* background: url(https://q1.qlogo.cn/g?b=qq&nk=3509679579&s=5); */
     background-size: cover;
     background-position: center;
 
@@ -558,7 +558,7 @@ section {
 
 .author_div1 {
     width: 50%;
-    height: 150px;
+    height: 220px;
     position: relative;
     border-radius: var(--borer-radius);
     background-color: var(--card_color);
