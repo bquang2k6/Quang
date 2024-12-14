@@ -25,37 +25,6 @@ tc_main[0].addEventListener('click', function (event) {
 
 
 
-
-
-
-
-/*
-let lastScrollTop = 0;
-
-window.addEventListener('scroll', function () {
-    const header_container = document.querySelector('.header_container');
-    const header = document.querySelector('.header');
-    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-    if (scrollTop > lastScrollTop) {
-        header_container.style.top = '-100%';
-        header.classList.remove("active");
-    } else {
-        header_container.style.top = '0';
-        header.classList.add("active");
-    }
-
-    lastScrollTop = scrollTop;
-    if (scrollTop < 20) {
-        header_container.style.top = '0';
-        document.querySelector(".header").classList.remove("active");
-    }
-});
-
-
-*/
-
-
 document.addEventListener('DOMContentLoaded', function () {
     setTimeout(fadeout, 500);
 

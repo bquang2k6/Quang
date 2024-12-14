@@ -162,14 +162,23 @@
             gap: 1rem;
             margin-top: 50px;
         }
+        .chon {
+            text-align: center;
+            font-size: 30px;
+        }
     </style>
 </head>
 <body>
-    <div style="color: rgba(84, 119, 216, 0.973);"><h2>Vui lòng chọn src code bạn muốn lấy theo thứ tự</h2></div>
+    <div class="chon" style="color: rgba(84, 119, 216, 0.973);">
+        <span>Vui lòng chọn src code bạn muốn lấy theo thứ tự</span>
+        <br>
+        <span>Ví dụ:</span>
+        <img src="img/vd.png" alt="">
+    </div>
     <div class="container">
         <!-- Dropdown for Link Selection -->
         <select id="linkDropdown" class="dropdown">
-            <option value="https://github.com/bquang2k6/Quang/blob/bus/mix/heart/index.html">1</option>
+            <option value="https://github.com/bquang2k6/Quang/tree/bus/mix/heart">1</option>
             <option value="https://github.com/bquang2k6/Quang/blob/bus/mix/heart.html">2</option>
             <option value="https://github.com/bquang2k6/Quang/tree/bus/Bang_tuan_hoan_hoa_hoc">3</option>
             <option value="https://github.com/bquang2k6/Quang/blob/bus/mix/galaxy.html">4</option>
@@ -178,8 +187,10 @@
             <option value="https://github.com/bquang2k6/Quang/blob/bus/mix/heart2.html">7</option>
             <option value="https://github.com/bquang2k6/Quang/blob/bus/mix/li-xi-tet.html">8</option>
             <option value="https://github.com/bquang2k6/Quang/blob/bus/mix/heart3.html">9</option>
-            <option value="https://github.com/bquang2k6/Quang/blob/bus/heart/index.html">10</option>
+            <option value="https://github.com/bquang2k6/Quang/tree/bus/heart">10</option>
             <option value="https://github.com/bquang2k6/Quang/blob/bus/mix/index2.html">11</option>
+            <option value="https://github.com/bquang2k6/Quang/blob/bus/mix/tranbonho">12</option>
+            <option value="https://github.com/bquang2k6/Quang/blob/bus/mix/christmast">13</option>
         </select>
 
         <!-- Button to Copy the Selected Link -->
@@ -213,5 +224,6 @@
             });
         }
     </script>
+
 </body>
 </html>
