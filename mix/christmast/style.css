@@ -542,3 +542,9 @@ body {
   width: 35px;
   height: auto;
 }
+.bottom-center { 
+  position: fixed; 
+  bottom: 0; left: 50%; 
+  transform: translateX(-50%); 
+  margin-bottom: 10px; /* Bạn có thể điều chỉnh để đặt khoảng cách cần thiết */ 
+}

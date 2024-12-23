@@ -81,6 +81,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 });
+document.addEventListener('contextmenu', function(event) {
+    event.preventDefault();
+});
+
+document.addEventListener('mousedown', function(event) {
+    if (event.button === 0) {
+        event.preventDefault();
+    }
+});
 
 
 

@@ -113,7 +113,10 @@ function createGift() {
     '🎄 Giáng sinh an lành!',
     '⭐ Chúc bạn một Giáng Sinh ấm áp!',
     '🎅 Ho Ho Ho! Quà từ ông già Noel',
-    '🎅 Giáng Sinh vui vẻ bên gia đình'
+    '⭐Chúc bạn một mùa giáng sinh hạnh phúc',
+    '🔔 Giáng Sinh vui vẻ bên gia đình',
+    '✨ May mắn và bình an sẽ luôn bên cạnh bạn!',
+    '❄️ Chúc bạn những khoảnh khắc đẹp nhất trong mùa lễ hội này!'
   ];
 
   gift.addEventListener('click', () => {
@@ -122,6 +125,9 @@ function createGift() {
     popup.textContent = messages[Math.floor(Math.random() * messages.length)];
     document.body.appendChild(popup);
     popup.style.display = 'block';
+    // Đặt vị trí của popup tại vị trí của hộp quà được nhấp vào 
+    popup.style.left = `${gift.offsetLeft}px`; 
+    popup.style.top = `${gift.offsetTop}px`;
 
     // Hiệu ứng âm thanh khi mở quà
     const unwrapSound = new Audio('unwrap.mp3');
@@ -388,3 +394,12 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+document.addEventListener('contextmenu', function(event) {
+  event.preventDefault();
+});
+
+document.addEventListener('mousedown', function(event) {
+  if (event.button === 0) {
+      event.preventDefault();
+  }
+});

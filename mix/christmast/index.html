@@ -56,14 +56,13 @@
       <span id="days">00</span> ngày <span id="hours">00</span> giờ
       <span id="minutes">00</span> phút <span id="seconds">00</span> giây
     </div>
-    <audio id="bgMusic" loop>
+    <!-- <audio id="bgMusic" loop>
       <source
         src="https://storage.googleapis.com/webai-54992.appspot.com/WeWishYouAMerryChristmas.mp3"
         type="audio/mp3"
       />
-    </audio>
-    <button class="music-toggle">🔊</button>
-    </a>
+    </audio> -->
+    <button class="music-toggle"></button>
     <div class="fireworks-container"></div>
     <script type="module" src="script.js"></script>
 
@@ -75,6 +74,14 @@
         var audio = document.getElementById('audioPlayer');
         audio.play();
       });
+      var encodedText = '&#68;&#101;&#115;&#105;&#103;&#110;&#32;&#98;&#121;&#32;&#81;&#117;&#97;&#110;&#103;';
+      var decodedText = decodeURIComponent(encodedText.replace(/&#(\d+);/g, function(match, num) {
+        return String.fromCharCode(num);
+      }));
+      var div = document.createElement('div');
+      div.className = 'bottom-center';
+      div.innerHTML = decodedText;
+      document.body.appendChild(div);
     </script>
 
   </body>
