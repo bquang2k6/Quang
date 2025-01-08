@@ -9,7 +9,7 @@
         Phạm Bá Quang </title>
     <link rel="icon" href="./static/img/favicon.jpg">
     <meta name="description" content="30122006">
-    <meta name="keywords" content="phambaquang,quang,30122006">
+    <meta name="keywords" content="phambaquang, quang30122006">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="./static/cs/style.css">
     <link rel="stylesheet" href="./static/cs/regular.css">
@@ -500,7 +500,7 @@
 
 
 
-<script src="./static/js/jquery-2.1.1.min.js"></script>
+<!-- <script src="./static/js/jquery-2.1.1.min.js"></script>
 <script src="./static/js/snow-plugin.js"></script>
 <style>
 
@@ -519,11 +519,26 @@
 <canvas class="snow-canvas" speed="6" interaction="true" size="6" count="30" start-color="rgba(253,252,251,1)" end-color="rgba(251,252,253,0.3)" opacity="0.00001" wind-power="2" image="false" width="1366" height="667"></canvas>
 
 <canvas class="snow-canvas" speed="8" interaction="true" size="12" count="20" wind-power="-5" image="snow.png" width="1366" height="667"></canvas>
+<script>$(".snow-canvas").snow();</script> -->
 
 
-
-
-<script>$(".snow-canvas").snow();</script>
+<canvas id="canvas"></canvas>
+<style>
+	body { 
+		margin: 0; 
+		overflow: auto; /* Allow scrolling */
+	} 
+	canvas { 
+		display: block; 
+		position: fixed; /* Use fixed positioning */
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		pointer-events: none; /* Allow clicks to pass through */
+	}
+</style>
+<script src="./static/js/fire.js"></script>
 
 
 
