@@ -18,7 +18,7 @@ console.log('script.js loaded');
 		hue = 120,
 		limiterTotal = 5,
 		limiterTick = 0,
-		timerTotal = 80,
+		timerTotal = 40,
 		timerTick = 0,
 		mousedown = false,
 		mx,
