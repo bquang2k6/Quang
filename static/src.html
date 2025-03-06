@@ -228,5 +228,75 @@
         }
     </script>
 
+
+<div class="footer">
+    <div class="footer_container">
+        <div class="left"> 
+            <a href="./src.html" target="_blank" style="color: #ff0000;">src code ấn vào đây</a>
+
+            <a href="https://bquang2k6.github.io/Quang/history.html" target="_blank">lịch sử cập nhật </a>
+        </div>
+        <div class="right">
+            <!-- 如果不喜欢可以换成你自己的 -->
+            <p><a href="https://zyyo.net" target="_blank">Thiết kế dựa trên https://zyyo.net</a></p>
+            <p><a href="https://typecho.org" target="_blank">Powered by typecho</a></p>
+        </div>
+
+    </div>
+</div>
+
+<style>
+    .footer {
+        width: 100%;
+        height: 100px;
+        border-top: 1px solid var(--border);
+        background-color: var(--color0);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footer_container {
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        padding: 0 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 15px;
+        max-width: var(--max_width);
+    }
+
+    .footer_container .left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer_container p {
+        color: var(--color1);
+        border-radius: 8px;
+        padding: 10px;
+        transition: all 0.2s var(--transition);
+        text-align: center;
+    }
+
+    .footer_container a {
+        color: var(--color2);
+        border-radius: 8px;
+        padding: 10px;
+        transition: all 0.2s var(--transition);
+        text-align: center;
+    }
+
+    .right {
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+
 </body>
 </html>
