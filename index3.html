@@ -10,7 +10,6 @@
    <link rel="stylesheet" href="./static/cs/style.css">
     <link rel="stylesheet" href="./static/cs/index.css">
     <link rel="stylesheet" href="./static/cs/post.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
    <!-- <link rel="stylesheet" href="./other.css"> -->
    <!-- <link rel="stylesheet" href="https://zyyo.net/usr/themes/Zyang/static/css/highlight.css">
    <link rel="stylesheet" href="https://zyyo.net/usr/themes/Zyang/static/css/nprogress.css">
@@ -148,12 +147,20 @@
            
          </div>
          <div class="header_icon_container">
-           
+            <!-- <a href="#" class="header_icon">
+               <svg>
+                  <use xlink:href="#kaiwang" />
+               </svg>
+            </a>             -->
             <div id="seach_btn" class="header_icon">
                <svg><use xlink:href="#search" />
                </svg>
             </div>
-            
+            <!-- <div id="user" onclick="window.location.href='/admin'" class="header_icon">
+               <svg>
+                  <use xlink:href="#user" />
+               </svg>
+            </div> -->
             <div id="sidebar_open" class="header_icon">
                <svg>
                   <use xlink:href="#more" />
@@ -214,251 +221,57 @@
   </div>
 
    <div class="container">
-    <section class="fade-in frist">
-        <div class="author_infor">
-            <style>
-            .author_infor::before {
-                background-image: url(./static/img/bg.jpg);
-            }
-            .author_infor {
-                width: 100.5%;
-                position: relative;
-                height: 290px;
-                padding: 15px;
-                border-radius: var(--borer_radius);
-                border: 1px solid var(--border);
-                overflow: hidden;
-                background-color: var(--card_color);
-                z-index: 0;
-                color: #fff;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                box-shadow: var(--shadow);
-            }
-            </style>
-            <div class="infor">
-                <div style="background-image:url(./static/img/avata.jpg);" class="logo">
-                    <div class="logo_tips">👏</div>
-                </div>
-                <h2>Quang</h2>
-                <p>about</p>
-            </div>
-            <div class="say1">Hello<br> Muốn lấy src code thì kéo xuống dưới cùng nha </div>
-            
-            <div class="links">
-                <!-- <a href="/about.html" class="about">about</a> -->
-                
-                <!-- <a class="link" href="mailto:i@zyyo.net">
-                    <svg>
-                        <use xlink:href="#mail" />
-                    </svg>
-                </a>
-                <a class="link" href="/usr/themes/Zyang/static/img/qq.jpg">
-                    <svg>
-                        <use xlink:href="#qq" />
-                    </svg>
-                </a>
-                <a class="link" href="https://github.com/ZYYO666"><svg><use xlink:href="#github" /></svg></a> -->
-                <a href="https://github.com/bquang2k6" target="_blank" class="link">
-                    <svg t="1728105008002" class="icon" viewBox="0 0 1024 1024" version="1.1"
-                        xmlns="http://www.w3.org/2000/svg" p-id="1855">
-                        <path
-                            d="M512 12.63616c-282.74688 0-512 229.21216-512 512 0 226.22208 146.69824 418.14016 350.12608 485.82656 25.57952 4.73088 35.00032-11.10016 35.00032-24.63744 0-12.20608-0.47104-52.55168-0.69632-95.31392-142.4384 30.96576-172.50304-60.416-172.50304-60.416-23.28576-59.16672-56.85248-74.91584-56.85248-74.91584-46.44864-31.78496 3.50208-31.1296 3.50208-31.1296 51.4048 3.60448 78.47936 52.75648 78.47936 52.75648 45.6704 78.27456 119.76704 55.64416 149.01248 42.55744 4.58752-33.09568 17.85856-55.68512 32.50176-68.46464-113.72544-12.94336-233.2672-56.85248-233.2672-253.0304 0-55.88992 20.00896-101.5808 52.75648-137.4208-5.3248-12.9024-22.85568-64.96256 4.95616-135.49568 0 0 43.008-13.74208 140.84096 52.49024 40.83712-11.34592 84.64384-17.03936 128.16384-17.24416 43.49952 0.2048 87.32672 5.87776 128.24576 17.24416 97.73056-66.2528 140.65664-52.49024 140.65664-52.49024 27.87328 70.53312 10.3424 122.59328 5.03808 135.49568 32.82944 35.86048 52.69504 81.53088 52.69504 137.4208 0 196.64896-119.78752 239.94368-233.79968 252.6208 18.37056 15.89248 34.73408 47.04256 34.73408 94.80192 0 68.5056-0.59392 123.63776-0.59392 140.51328 0 13.6192 9.216 29.5936 35.16416 24.576 203.32544-67.76832 349.83936-259.62496 349.83936-485.76512 0-282.78784-229.23264-512-512-512z"
-                            p-id="1856"></path>
-                    </svg>
-                </a>
-                <a href="mailto:phambaquang3012@gmail.com" target="_blank" class="link">
-                    <svg t="1728105061221" class="icon" viewBox="0 0 1024 1024" version="1.1"
-                        xmlns="http://www.w3.org/2000/svg" p-id="2840">
-                        <path
-                            d="M367.2064 580.3008l144.896 99.072 139.6736-96.3584 313.088 308.8896c-8.2432 2.6624-17.0496 4.096-26.2144 4.096H85.3504c-11.264 0-22.016-2.2016-31.8976-6.144l313.7536-309.5552zM1024 326.4512v484.1984c0 12.6464-2.7648 24.6272-7.68 35.4304l-306.8928-302.7968L1024 326.4512zM0 329.1648l309.3504 211.5584-303.9232 299.9296A85.1456 85.1456 0 0 1 0 810.6496V329.216zM938.6496 128c47.104 0 85.3504 38.1952 85.3504 85.3504v30.0032L511.8976 596.3776 0 246.272v-32.9216C0 166.2464 38.1952 128 85.3504 128h853.2992z"
-                            p-id="2841"></path>
-                    </svg>
-                </a>
-
-
-                <a href="https://www.facebook.com/quang301226/" target="_blank" class="link">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
-                        <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
-                      </svg>
-                </a>
-
-                <a href="https://tiktok.com" target="_blank" class="link">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-tiktok" viewBox="0 0 16 16">
-                        <path d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3z"/>
-                      </svg>
-                </a>
-
-
-
-                <a href="https://www.instagram.com/pam.wng" target="_blank" class="link">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
-                        <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
-                    </svg>
-                </a>
-                <a href="https://locket.cam/wan206" target="_blank" class="link">
-                    <?xml version="1.0" encoding="utf-8"?>
-                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 122.88 107.41" style="enable-background:new 0 0 122.88 107.41" xml:space="preserve">
-                        <g>
-                            <path class="st0" d="M60.83,17.19C68.84,8.84,74.45,1.62,86.79,0.21c23.17-2.66,44.48,21.06,32.78,44.41 c-3.33,6.65-10.11,14.56-17.61,22.32c-8.23,8.52-17.34,16.87-23.72,23.2l-17.4,17.26L46.46,93.56C29.16,76.9,0.95,55.93,0.02,29.95 C-0.63,11.75,13.73,0.09,30.25,0.3C45.01,0.5,51.22,7.84,60.83,17.19L60.83,17.19L60.83,17.19z"/>
-                        </g>
-                    </svg>
-                </a>
-            </div>
-        </div>
-        
-        
-            
-    </section>
 <section class="articles">
 
 
-    <div class="container mt-4">
-        <form class="upload-form">
-            <h3 style="text-align: center;">Lịch sử cập nhật</h3>
-
-            <div class="update-item">
-                <h4 class="text-info">Ngày cập nhật: 19/3/2025</h4>
-                <!-- <p>Khu vực ảnh hưởng: Client-Side Interface</p> -->
-                <p style="margin-bottom: 0px; font-weight: bold;">Update:</p>
-                <ul>
-                    <li>Thêm code will you date me ?</li>
-                </ul>
+    <a href="./will-you-date-me/index.html" class="fade-in article-card" target="_blank">
+        <div class="img">
+            <img style="" src="./static/img/15.gif" alt="Lỗi hiển thị ảnh">
+        </div>
+        <div class="content">
+            <div class="tags">
+                <span class="tag">#15</span>
             </div>
 
+                <h3>ấn vào để xem nè ☝️</h3>
+                <h4 style="color: rgb(115, 115, 255);">Will you date me?</h4>
+                
+        </div>
+    </a>
 
 
-            <div class="update-item">
-                <h4 class="text-info">Ngày cập nhật: 10/3/2025</h4>
-                <!-- <p>Khu vực ảnh hưởng: Client-Side Interface</p> -->
-                <p style="margin-bottom: 0px; font-weight: bold;">Update:</p>
-                <ul>
-                    <li>Thêm code ngày 8/3</li>
-                </ul>
-            </div>
-            <div class="update-item">
-                <h4 class="text-info">Ngày cập nhật: 06/03/2025</h4>
-                <!-- <p>Khu vực ảnh hưởng: Client-Side Interface</p> -->
-                <p style="margin-bottom: 0px; font-weight: bold;">Chỉnh sửa giao diện:</p>
-                <ul>
-                    <li>Chỉnh sửa một vài thứ ....</li>
-                    <li>thay đổi ảnh đại diện</li>
-                    <li>Thêm trang lịch sử cập nhật</li>
-                </ul>
-            </div>
-
-            <div class="update-item">
-                <h4 class="text-info">Ngày cập nhật: 08/02/2025</h4>
-                <p>Khu vực ảnh hưởng: more</p>
-                <p style="margin-bottom: 0px; font-weight: bold;">Thêm: </p>
-                <ul>
-                    <li>Một vài câu mình cảm thấy hay</li>
-                </ul>
-            </div>
-
-            <div class="update-item">
-                <h4 class="text-info">Ngày cập nhật: 08/01/2025</h4>
-                <p>Khu vực ảnh hưởng: all</p>
-                <p style="margin-bottom: 0px; font-weight: bold;">Khắc phục:</p>
-                <ul>
-                    <li>Làm mới giao diện web</li>
-                </ul>
-            </div>
-
-            <div class="update-item">
-                <h4 class="text-info">Ngày cập nhật: 08/01/2025</h4>
-                <p>Khu vực ảnh hưởng: all</p>
-                <p style="margin-bottom: 0px; font-weight: bold;">Khắc phục:</p>
-                <ul>
-                    <li>Làm mới giao diện web</li>
-                </ul>
-            </div>
-
-
-            <div class="update-item">
-                <h4 class="text-info">Ngày cập nhật: 23/12/2024</h4>
-                <p>Khu vực ảnh hưởng: author_other</p>
-                <p style="margin-bottom: 0px; font-weight: bold;">Khắc phục:</p>
-                <ul>
-                    <li>Thêm phần xem thời tiết</li>
-                    <li>Địa chỉ IP</li>
-                </ul>
-            </div>
-
-            <div class="update-item">
-                <h4 class="text-info">Ngày cập nhật: 16/12/2024</h4>
-                <p>Khu vực ảnh hưởng: ....</p>
-                <p style="margin-bottom: 0px; font-weight: bold;">Khắc phục:</p>
-                <ul>
-                    <li>Tích hợp thêm google Analytics</li>
-                </ul>
-            </div>
-
-            <div class="update-item">
-                <h4 class="text-info">Ngày cập nhật: 14/12/2024</h4>
-                <p>Khu vực ảnh hưởng: add src.html</p>
-                <p style="margin-bottom: 0px; font-weight: bold;">Khắc phục:</p>
-                <ul>
-                    <li>Thêm trang show src code</li>
-                </ul>
-            </div>
-
-            <div class="update-item">
-                <h4 class="text-info">Ngày cập nhật: 8/12/2024</h4>
-                <p>Khu vực ảnh hưởng: ......</p>
-                <p style="margin-bottom: 0px; font-weight: bold;">Khắc phục:</p>
-                <ul>
-                    <li>Thêm code tranbonho</li>
-                </ul>
-            </div>
-            
-            <div class="update-item">
-                <h4 class="text-info">Ngày cập nhật: 28/10/2024-11/11/2024</h4>
-                <p>Khu vực ảnh hưởng: all</p>
-                <p style="margin-bottom: 0px; font-weight: bold;">Khắc phục:</p>
-                <ul>
-                    <li>Tối ưu trang web</li>
-                    <li>Chỉnh sửa một vài thứ còn thiếu</li>
-                </ul>
-            </div>
-
-            <div class="update-item">
-                <h4 class="text-info">Ngày cập nhật: 17/10/2024</h4>
-                <p>Khu vực ảnh hưởng: all</p>
-                <p style="margin-bottom: 0px; font-weight: bold;">Cập nhât lớn:</p>
-                <ul>
-                    <li>Xây dựng trang web</li>
-                    <li>Chuyển đổi web thành web chính</li>
-                </ul>
-            </div>
-            
-        </form>
-    </div>
-    
-    
     
 </section>
-<!-- <ul class="pagination">
+<ul class="pagination">
     <li><a href="./index.html">&laquo;</a></li>
-    <li><a href="./index.html">1</a></li>
-    <li class="active"><a href="./index2.html">2</a></li>
-</ul> -->
+    <li>
+        <a href="./index.html">1</a>
+    </li>
+    <li>
+        <a href="./index2.html">2</a>
+    </li>
+    <li class="active">
+        <a href="./index3.html">3</a>
+    </li>
+    <li >
+        <a href="./index3.html">&raquo;</a>
+    </li>
+</ul>
 </div>
 <div class="footer">
     <div class="footer_container">
-        <div class="left"> 
-            <a href="./static/src.html" target="_blank" style="color: #ff0000;">src code ấn vào đây</a>
-
+        <div class="left">
+            <a href="./static/src.html" target="_blank" style="color: #ff0000" >src code ấn vào đây</a>
             <a href="./history.html" target="_blank">lịch sử cập nhật </a>
+            
         </div>
         <div class="right">
-        
-            <p><a href="https://zyyo.net" target="_blank">Thiết kế dựa trên https://zyyo.net</a></p>
+
+            <p><a href="https://zyyo.net" target="_blank" >Thiết kế dựa trên https://zyyo.net</a></p>
             <p><a href="https://typecho.org" target="_blank">Powered by typecho</a></p>
         </div>
 
-    </div>
+    </div> 
 </div>
 
 <div id="seach_modal" class="seach_modal">
@@ -509,7 +322,6 @@
     var url = "./index.html";
 </script>
 <script src="./static/js/main.js"></script>
-<script src="https://bquang2k6.github.io/Quang/static/js/main.js"></script>
 <!-- <script src="./Quang/jquery.lazyload.js"></script> -->
 
 
