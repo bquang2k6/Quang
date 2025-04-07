@@ -155,7 +155,7 @@
 }
 
 .author_other {
-    width: 49%;
+    width: 48%;
     position: relative;
     height: 230px;
     border-radius: var(--borer_radius);
@@ -734,4 +734,48 @@
 }
 .weather p, .stat-item p {
     color: rgb(255, 95, 95);
+}
+
+
+.author_other {
+    list-style-type: none;
+    padding: 0;
+}
+.stat-item {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    line-height: 1.2;
+    position: relative;
+    padding-right: 100px; /* Tạo khoảng cách giữa nội dung và nút phát */
+}
+.stat-item img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    border-radius: 12px;
+}
+.stat-item .play-button {
+    margin-left: 50px;
+    background-color: #555;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: absolute;
+    right: 10px; /* Khoảng cách cố định từ nút đến lề bên phải */
+    top: 50%; /* Để nút căn giữa chiều cao dòng */
+    transform: translateY(-50%); /* Đảm bảo căn chỉnh chính xác theo chiều dọc */
+}
+.stat-item .play-button span {
+    color: white;
+}
+.name {
+    font-size: 15px;
+    font-family: 'Comic Sans MS', sans-serif;
+    ;
 }

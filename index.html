@@ -299,6 +299,89 @@
                 </div>
             </div>
         </div>
+        <ul class="author_other">
+            <div class="stats">
+                <li class="stat-item" style="border-radius: 12px; box-shadow: 0 0 1px;">
+                    <img src="./static/music/Yêu em trong mơ.jpg" alt="erro">
+                    <div>
+                        <div>Yêu em trong mơ</div>
+                        <div class="name">Sino x Kai x An Vũ</div>
+                    </div>
+                    <button class="play-button" onclick="togglePlay(this, './static/music/Yêu em trong mơ.mp3')">
+                        <span>▶</span>
+                    </button>
+                </li>
+                <li class="stat-item" style="border-radius: 12px; box-shadow: 0 0 1px;">
+                    <img src="./static/music/Những lời hứa bỏ quên.mp3.png" alt="erro">
+                    <div>
+                        <div>Những lời hứa bỏ quên</div>
+                        <div class="name">Vũ. x Dear Jane</div>
+                    </div>
+                    <button class="play-button" onclick="togglePlay(this, './static/music/Những lời hứa bỏ quên.mp3')">
+                        <span>▶</span>
+                    </button>
+                </li>
+                <li class="stat-item" style="border-radius: 12px; box-shadow: 0 0 1px;">
+                    <img src="./static/music/Vết Mưa.jpg" alt="erro">
+                    <div>
+                        <div>Vết Mưa</div>
+                        <div class="name">piano cover</div>
+                    </div>
+                    <button class="play-button" onclick="togglePlay(this, './static/music/Vết Mưa.mp3')">
+                        <span>▶</span>
+                    </button>
+                </li>
+                <li class="stat-item" style="border-radius: 12px; box-shadow: 0 0 1px;">
+                    <img src="./static/music/BƯỚC QUA MÙA CÔ ĐƠN.png" alt="erro">
+                    <div>
+                        <div>Bước Qua Mùa Cô Đơn</div>
+                        <div class="name">Vũ</div>
+                    </div>
+                    <button class="play-button" onclick="togglePlay(this, './static/music/BƯỚC QUA MÙA CÔ ĐƠN.mp3')">
+                        <span>▶</span>
+                    </button>
+                </li>
+                
+            </div>
+        </ul>
+        <audio id="audioPlayer"></audio>
+
+        <script>
+            let currentButton = null; // Nút hiện tại đang phát
+            let currentSong = null;   // Bài hát hiện tại đang phát
+    
+            function togglePlay(button, song) {
+                const audioPlayer = document.getElementById('audioPlayer');
+    
+                // Nếu đang phát bài hát hiện tại, thì tạm dừng
+                if (currentSong === song && !audioPlayer.paused) {
+                    audioPlayer.pause();
+                    button.querySelector('span').textContent = '▶'; // Chuyển sang Play
+                    currentButton = null;
+                    currentSong = null;
+                } else {
+                    // Nếu có bài khác đang phát, tắt bài đó và cập nhật trạng thái
+                    if (currentButton) {
+                        currentButton.querySelector('span').textContent = '▶';
+                    }
+    
+                    // Phát bài mới
+                    audioPlayer.src = song;
+                    audioPlayer.play();
+                    button.querySelector('span').textContent = '❚❚'; // Chuyển sang Pause
+                    currentButton = button;
+                    currentSong = song;
+                }
+    
+                // Khi nhạc dừng, tự động đưa nút về trạng thái Play
+                audioPlayer.onpause = () => {
+                    if (currentButton) {
+                        currentButton.querySelector('span').textContent = '▶';
+                    }
+                };
+            }
+        </script>
+    
         <script>
             // Hàm lấy địa chỉ IP và vị trí từ dịch vụ ipinfo.io
             async function fetchIPAndLocation() {
@@ -462,7 +545,8 @@
     <li class="active">
         <a href="./index.html">1</a>
     </li><li><a href="./index2.html">2</a>
-    </li><li><a href="./index2.html">&raquo;</a>
+    </li><li><a href="./index3.html">3</a>
+    </li><li><a href="./index3.html">&raquo;</a>
     </li></ul>
 </div>
 <div class="footer">
