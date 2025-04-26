@@ -75,7 +75,7 @@
     bottom: 0;
     content: "";
     height: 100%;
-    filter: blur(25px);
+    filter: blur(5px);
     left: 0;
     position: absolute;
     right: 0;
