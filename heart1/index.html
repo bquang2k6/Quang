@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>love you</title>
+
+    <link rel="stylesheet" href="./static/css/styles.css" />
+     <script>
+    var shouci=true;
+    console.log(shouci);
+        function bodyPlayMusic(){
+            if(shouci){
+                shouci=false;
+                audio.play();
+                console.log(shouci);
+            }
+        };
+    </script>
+    
+    
+    
+ </head>
+<body onclick="bodyPlayMusic()">
+<img id="music_ico"  onclick="clickMusic()"  alt=""  style=" display: inline; float: right;  " >
+<audio id="audio"  src="https://sf6-cdn-tos.douyinstatic.com/obj/tos-cn-ve-2774/e66202d0d53142359dfde75e6b702326" preload="auto" loop="loop" ></audio>
+
+
+
+
+
+
+      
+          
+    <script src="./static/js/three.min.js"></script>
+   
+            <script src="static/js/meshsurfacesampler.js"></script>
+          <script src="static/js/trackballcontrols.js"></script>
+    <script src="static/js/simplex-noise.js"></script>
+     <script src="static/js/objloader.js"></script>
+    <script src="static/js/gsap.min.js"></script>
+    <script src="static/js/script.js"></script>
+      <!--<script src="static/js/1.js" charset="UTF-8"></script>-->
+      
+      <script language="javascript" type="text/javascript" 
+src="static/js/jquery.min.js">	
+</script>
+<script type="text/javascript">
+ /* 鼠标特效 */ 
+ var a_idx = 0; jQuery(document).ready(function($) 
+ 	{ $("body").click(function(e) { var a = new Array("love", "💖","love you", "💞","love you"); 
+var $i = $("<span/>").text(a[a_idx]); 
+a_idx = (a_idx + 1) % a.length; var x = e.pageX, y = e.pageY;  
+ $i.css({ "z-index": 99, "top": y - 100, "left": x, "position": "absolute", "font-weight": "bold", "color": "rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")" }); $("body").append($i); $i.animate({ "top": y - 580, "opacity": 0 }, 1500, function(){ $i.remove(); }); }); });
+ </script>
+      
+      
+  
+
+
+
+
+
+      
+      
+      
+      
+      
+  
+  </body>
+</html>

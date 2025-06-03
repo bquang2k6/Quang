@@ -37,7 +37,7 @@
 <meta name="template" content="Wang" />
    <style>
     .sidebar_infor::before {
-        background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), var(--color0)), url(./static/img/bg.gif);
+        background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), var(--color0)), url(./static/img/bg.jpg);
         }
     </style>
 </head>
@@ -194,6 +194,10 @@
          <hr>
          <br>
          <div class="title">Không có ai tự nhiên tài giỏi cả, họ đều phải trải qua quãng thời gian làm việc chăm chỉ và học hỏi để thành công</div>
+         <br>
+       <hr>
+       <br>
+         <div class="title">Trái tim tôi như hẫn đi một nhịp vào khoảnh khắc mà cô ấy công khai ai đó lên mxh</div>
          <div class="tags"></div>
         </div>
     </div>
@@ -203,7 +207,7 @@
         <div class="author_infor">
             <style>
             .author_infor::before {
-                background-image: url(./static/img/bg.gif);
+                background-image: url(./static/img/bg.jpg);
             }
             </style>
             <div class="infor">
@@ -211,7 +215,7 @@
                     <div class="logo_tips">👏</div>
                 </div>
                 <h2>Quang</h2>
-                <p>about</p>
+                <p>02/06/2025 💔</p>
             </div>
             <div class="say1">Hello<br> Muốn lấy src code thì kéo xuống dưới cùng nha </div>
             <div class="links">
@@ -397,7 +401,7 @@
             <audio id="audioPlayer"></audio>
             
             <script>
-                // Danh sách bài hát
+               // Danh sách bài hát    
                 const songs = [
                     {
                         title: "Yêu em trong mơ",
@@ -412,10 +416,10 @@
                         src: "./static/music/Những lời hứa bỏ quên.mp3"
                     },
                     {
-                        title: "Vết Mưa",
-                        artist: "piano cover",
-                        img: "./static/music/Vết Mưa.jpg",
-                        src: "./static/music/Vết Mưa.mp3"
+                        title: "Là bạn không thể yêu",
+                        artist: "Lou Hoàng",
+                        img: "./static/music/Là bạn không thể yêu.jpeg",
+                        src: "./static/music/Là bạn không thể yêu.mp3"
                     },
                     {
                         title: "Bước Qua Mùa Cô Đơn",
@@ -428,26 +432,62 @@
                         artist: "Remix Tiktok Ver/Hạ Kiện Jian Remix) -Ariana Grande",
                         img: "./static/music/One Last Time.png",
                         src: "./static/music/One Last Time.mp3"
+                    },
+                    {
+                        title: "Có ai thương em như anh",
+                        artist: "Tóc Tiên, ft. Touliver",
+                        img: "./static/music/Có ai thương em như anh.jpeg",
+                        src: "./static/music/Có ai thương em như anh.mp3"
+                    },
+                    {
+                        title: "Tình yêu buông tha cho chúng ta",
+                        artist: "Trungg I.U x Lâm Bảo Ngọc",
+                        img: "./static/music/Tình yêu buông tha cho chúng ta.jpeg",
+                        src: "./static/music/Tình yêu buông tha cho chúng ta.mp3"
+                    },
+                    {
+                        title: "Sao em lại tắt máy" ,
+                        artist: "Phạm Nguyên Ngọc ft. VAnh",
+                        img: "./static/music/Sao em lại tắt máy.jpeg",
+                        src: "./static/music/Sao em lại tắt máy.mp3"
                     }
                 ];
-            
+
                 let currentButton = null;
                 let currentSong = null;
-            
-                // Hàm chọn và hiển thị bài hát (1 cố định + 2 ngẫu nhiên)
+
+                // Hàm chọn và hiển thị bài hát (1 cố định + 3 ngẫu nhiên)
                 function displayRandomSongs() {
-                    // Lấy bài cố định
                     const fixedSong = songs[0]; // Bài "Yêu em trong mơ"
-                    // Lấy các bài còn lại và xáo trộn, chọn 2 bài
-                    const otherSongs = songs.slice(1).sort(() => 0.5 - Math.random()).slice(0, 2);
-                    // Kết hợp bài cố định và 2 bài ngẫu nhiên
-                    const selectedSongs = [fixedSong, ...otherSongs];
                     const container = document.getElementById("randomSongContainer");
-            
+
+                    // Lấy danh sách các chỉ số bài hát đã hiển thị từ sessionStorage
+                    let displayedIndices = JSON.parse(sessionStorage.getItem('displayedIndices') || '[]');
+
+                    // Lấy danh sách các bài hát chưa hiển thị (bỏ bài cố định)
+                    let availableSongs = songs.slice(1).filter((_, index) => !displayedIndices.includes(index + 1));
+
+                    // Nếu không còn bài hát nào chưa hiển thị, reset danh sách
+                    if (availableSongs.length < 3) {
+                        displayedIndices = [];
+                        availableSongs = songs.slice(1);
+                    }
+
+                    // Xáo trộn và chọn 3 bài ngẫu nhiên từ các bài chưa hiển thị
+                    const otherSongs = availableSongs.sort(() => 0.5 - Math.random()).slice(0, 3);
+
+                    // Cập nhật danh sách chỉ số đã hiển thị
+                    const newDisplayedIndices = otherSongs.map(song => songs.indexOf(song));
+                    displayedIndices = [...displayedIndices, ...newDisplayedIndices];
+                    sessionStorage.setItem('displayedIndices', JSON.stringify(displayedIndices));
+
+                    // Kết hợp bài cố định và 3 bài ngẫu nhiên
+                    const selectedSongs = [fixedSong, ...otherSongs];
+
                     // Xóa nội dung cũ
                     container.innerHTML = "";
-            
-                    // Thêm 3 bài hát vào container
+
+                    // Thêm 4 bài hát vào container
                     selectedSongs.forEach(song => {
                         container.innerHTML += `
                             <li class="stat-item" style="border-radius: 12px; box-shadow: 0 0 1px;">
@@ -463,11 +503,11 @@
                         `;
                     });
                 }
-            
+
                 // Hàm togglePlay để phát/tạm dừng nhạc
                 function togglePlay(button, song) {
                     const audioPlayer = document.getElementById('audioPlayer');
-            
+
                     if (currentSong === song && !audioPlayer.paused) {
                         audioPlayer.pause();
                         button.querySelector('span').textContent = '▶';
@@ -477,25 +517,24 @@
                         if (currentButton) {
                             currentButton.querySelector('span').textContent = '▶';
                         }
-            
+
                         audioPlayer.src = song;
                         audioPlayer.play();
                         button.querySelector('span').textContent = '❚❚';
                         currentButton = button;
                         currentSong = song;
                     }
-            
+
                     audioPlayer.onpause = () => {
                         if (currentButton) {
                             currentButton.querySelector('span').textContent = '▶';
                         }
                     };
                 }
-            
+
                 // Gọi hàm hiển thị bài hát khi trang được load
                 window.onload = displayRandomSongs;
-            </script>
-    
+        </script>
         
     </section>
 
@@ -508,7 +547,7 @@
             <div class="tags">
                 <span class="tag">#1</span>
             </div>
-            <h3>ấn vào để xem nè ☝️</h3>
+                <h3>ấn vào để xem nè ☝️</h3>
           
         </div>
     </a>
@@ -520,9 +559,9 @@
             <div class="tags">
                 <span class="tag">#2</span>
             </div>
-            <h3>ấn vào để xem nè ☝️</h3>
-            <h4 style="color: rgb(115, 115, 255);">trend lytuan</h4>
-
+                <h3>ấn vào để xem nè ☝️</h3>
+                <h4 style="color: rgb(115, 115, 255);">trend lytuan</h4>
+           
         </div>
     </a>
     <a href="./Bang_tuan_hoan_hoa_hoc/index.html" class="fade-in article-card" target="_blank">
@@ -533,8 +572,9 @@
             <div class="tags">
                 <span class="tag">#3</span>
             </div>
-            <h3>ấn vào để xem nè ☝️</h3>
-            <h4 style="color: rgb(115, 115, 255);">bảng tuần hoàn hóa học</h4>
+                <h3>ấn vào để xem nè ☝️</h3>
+                <h4 style="color: rgb(115, 115, 255);">bảng tuần hoàn hóa học</h4>
+            
         </div>
     </a>
 
@@ -546,8 +586,8 @@
             <div class="tags">
                 <span class="tag">#4</span>
             </div>
-            <h3>ấn vào để xem nè ☝️</h3>
-            <h4 style="color: rgb(115, 115, 255);">Vũ trụ</h4>
+                <h3>ấn vào để xem nè ☝️</h3>
+                <h4 style="color: rgb(115, 115, 255);">Vũ trụ</h4>
            
         </div>
     </a>
@@ -559,9 +599,9 @@
             <div class="tags">
                 <span class="tag">#5</span>
             </div>
-            <h3>ấn vào để xem nè ☝️</h3>
-            <h4 style="color: rgb(115, 115, 255);">tỏ tình</h4>
-          
+                <h3>ấn vào để xem nè ☝️</h3>
+                <h4 style="color: rgb(115, 115, 255);">tỏ tình</h4>
+            
         </div>
     </a>
     <a href="./noel/index.html" class="fade-in article-card" target="_blank">
@@ -574,7 +614,7 @@
             </div>
                 <h3>ấn vào để xem nè ☝️</h3>
                 <h4 style="color: rgb(115, 115, 255);">noel</h4>
-               
+           
         </div>
     </a>
    
