@@ -470,24 +470,24 @@ var zyyo = new Zyyo();
 
 
 
-document.addEventListener('keydown', function(event) {
-    if (event.key === 'F12' || (event.ctrlKey && event.key === 'u')) {
-      event.preventDefault();
-      alert('Chức năng này bị vô hiệu hóa!');
-    }
-  });
+// document.addEventListener('keydown', function(event) {
+//     if (event.key === 'F12' || (event.ctrlKey && event.key === 'u')) {
+//       event.preventDefault();
+//       alert('Chức năng này bị vô hiệu hóa!');
+//     }
+//   });
 
-  (function() {
-    const element = new Image();
-    Object.defineProperty(element, 'id', {
-      get: function() {
-        window.location.reload();
-      }
-    });
-    console.log(element);
-  })();
+//   (function() {
+//     const element = new Image();
+//     Object.defineProperty(element, 'id', {
+//       get: function() {
+//         window.location.reload();
+//       }
+//     });
+//     console.log(element);
+//   })();
 
-  document.addEventListener('contextmenu', function(event) {
-    event.preventDefault();
-    alert('Nhấp chuột phải bị vô hiệu hóa!');
-  });
+//   document.addEventListener('contextmenu', function(event) {
+//     event.preventDefault();
+//     alert('Nhấp chuột phải bị vô hiệu hóa!');
+//   });
