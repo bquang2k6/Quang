@@ -1,0 +1,379 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.apk-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Thay đổi từ auto-fill, minmax(350px, 1fr) thành 4 cột cố định */
+    gap: 25px;
+}
+
+.apk-card {
+    background: rgba(255,255,255,0.95);
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.apk-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.apk-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    border-radius: 20px 20px 0 0;
+}
+
+.apk-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.apk-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 15px;
+    margin-right: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    object-fit: cover;
+}
+
+.apk-info h3 {
+    color: #333;
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+}
+
+.apk-version {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.apk-details {
+    margin-bottom: 20px;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.detail-label {
+    font-weight: 500;
+}
+
+.download-stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: rgba(102, 126, 234, 0.1);
+    border-radius: 12px;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+}
+
+.stars {
+    color: #ffa726;
+    margin-right: 5px;
+}
+
+.download-btn {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.download-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+}
+
+.download-btn:active {
+    transform: translateY(0);
+}
+
+.download-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.download-btn::after {
+    content: '⬇';
+    margin-left: 10px;
+    font-size: 1.2rem;
+}
+
+.category-filter {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.filter-btn {
+    padding: 10px 20px;
+    background: rgba(255,255,255,0.9);
+    border: 2px solid transparent;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #333;
+    font-weight: 500;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: white;
+    border-color: #667eea;
+    color: #667eea;
+    transform: translateY(-2px);
+}
+
+.new-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #ff4757;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #4CAF50;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transform: translateX(400px);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+}
+
+.notification.show {
+    transform: translateX(0);
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+@media (max-width: 768px) {
+    .apk-grid {
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); /* Giữ responsive cho mobile */
+        gap: 15px;
+    }
+
+    .apk-card {
+        padding: 10px;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    .apk-card .apk-header {
+        flex-direction: column;
+        margin-bottom: 5px;
+    }
+
+    .apk-card .apk-icon {
+        margin-right: 0;
+        margin-bottom: 8px;
+        width: 48px;
+        height: 48px;
+    }
+
+    .apk-card .apk-info h3 {
+        font-size: 0.8rem;
+        line-height: 1.2;
+        margin-bottom: 0;
+    }
+
+    .apk-card .apk-details,
+    .apk-card .download-stats,
+    .apk-card .download-btn,
+    .apk-card .apk-version,
+    .apk-card .new-badge {
+        display: none;
+    }
+
+    .apk-card.expanded {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(1);
+        width: 90%;
+        max-width: 400px;
+        z-index: 1000;
+        background: rgba(255,255,255,0.98);
+        padding: 25px;
+        max-height: 80vh;
+        overflow-y: auto;
+        opacity: 1;
+        animation: iosPopIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        touch-action: none;
+    }
+
+    .apk-card.expanded.swiping {
+        transition: none;
+    }
+
+    @keyframes iosPopIn {
+        0% {
+            transform: translate(-50%, -50%) scale(0.7);
+            opacity: 0.5;
+        }
+        100% {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+        }
+    }
+
+    .apk-card.expanded .apk-header {
+        flex-direction: row;
+        margin-bottom: 20px;
+    }
+
+    .apk-card.expanded .apk-icon {
+        width: 64px;
+        height: 64px;
+        margin-right: 15px;
+        margin-bottom: 0;
+    }
+
+    .apk-card.expanded .apk-info h3 {
+        font-size: 1.3rem;
+        text-align: left;
+        margin-bottom: 5px;
+    }
+
+    .apk-card.expanded .apk-details,
+    .apk-card.expanded .download-stats,
+    .apk-card.expanded .download-btn,
+    .apk-card.expanded .apk-version,
+    .apk-card.expanded .new-badge {
+        display: block;
+    }
+
+    .apk-card.expanded .download-stats {
+        display: flex;
+    }
+
+    .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: #666;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+        transform: scale(1);
+    }
+
+    .close-btn:hover {
+        background: rgba(0,0,0,0.1);
+        color: #333;
+        transform: scale(1.1);
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+}
+
+.show {
+    border-radius: 12px;
+    height: 19%;
+    width: 19%;
+    
+}
+@media (max-width: 768px) {
+    .show {
+        height: 49%;
+        width: 49%;
+    }
+}
