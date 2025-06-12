@@ -4,9 +4,9 @@ const apkData = [
                 version: "1.0",
                 category: "social",
                 rating: 4.2,
-                size: "32 MB",
+                size: "1 MB",
                 icon: "./icon/bản màu xanh.png",
-                downloadUrl: "public/bản màu xanh.apk",
+                downloadUrl: "public/xanh.apk",
                 isNew: false
             },
             {
@@ -14,9 +14,9 @@ const apkData = [
                 version: "1.0",
                 category: "social",
                 rating: 4.5,
-                size: "32 MB",
+                size: "1 MB",
                 icon: "./icon/black.png",
-                downloadUrl: "public/bản màu đen.apk",
+                downloadUrl: "public/đen.apk",
                 isNew: true
             },
             {
@@ -24,9 +24,9 @@ const apkData = [
                 version: "1.0",
                 category: "social",
                 rating: 4.9,
-                size: "32 MB",
+                size: "1 MB",
                 icon: "icon/pink.png",
-                downloadUrl: "public/bản màu tím hồng.apk",
+                downloadUrl: "public/tím hồng.apk",
                 isNew: false
             },
             {
@@ -34,9 +34,9 @@ const apkData = [
                 version: "1.0",
                 category: "social",
                 rating: 4.4,
-                size: "32 MB",
+                size: "1 MB",
                 icon: "icon/pinkk.png",
-                downloadUrl: "public/màu hồng pink.apk",
+                downloadUrl: "public/hồng.apk",
                 isNew: false
             },
             {
@@ -44,7 +44,7 @@ const apkData = [
                 version: "1.0",
                 category: "social",
                 rating: 5.0,
-                size: "32 MB",
+                size: "1 MB",
                 icon: "icon/avata tang diên.png",
                 downloadUrl: "public/avata tang diên.apk",
                 isNew: false
@@ -54,9 +54,9 @@ const apkData = [
                 version: "1.0",
                 category: "social",
                 rating: 4.9,
-                size: "32 MB",
+                size: "1 MB",
                 icon: "icon/gold.png",
-                downloadUrl: "public/bản màu vàng gold.apk",
+                downloadUrl: "public/gold.apk",
                 isNew: true
             }
         ];
@@ -181,7 +181,7 @@ const apkData = [
     progressContainer.classList.add('show');
     progressBar.style.width = '0%';
     progressPercentage.textContent = '0%';
-    progressSize.textContent = '0 MB / 32.00 MB';
+    progressSize.textContent = '0 MB / 1.10 MB';
     progressSpeed.textContent = '0 KB/s';
 
     // Khởi tạo AbortController để hủy tải xuống
@@ -204,7 +204,7 @@ const apkData = [
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
 
-        const total = 33554432; // 32 MB in bytes
+        const total = 1048576; // 1 MB in bytes
         let loaded = 0;
         let lastLoaded = 0;
         let lastTime = startTime;
@@ -224,7 +224,7 @@ const apkData = [
             const percentage = Math.round((loaded / total) * 100);
             progressBar.style.width = `${percentage}%`;
             progressPercentage.textContent = `${percentage}%`;
-            progressSize.textContent = `${(loaded / 1024 / 1024).toFixed(2)} MB / 32.00 MB`;
+            progressSize.textContent = `${(loaded / 1024 / 1024).toFixed(2)} MB / 1.00 MB`;
 
             // Tính tốc độ tải
             const currentTime = Date.now();
