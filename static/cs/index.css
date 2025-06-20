@@ -53,21 +53,174 @@
     text-align: center;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+.author_infor {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer; /* Thêm con trỏ pointer để thể hiện có thể tương tác */
+}
+
 .author_infor .infor {
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform: translateY(0);
+    opacity: 1;
+    animation: slideCycle 5.6s ease 1s forwards;
+    transition: transform 0.4s ease, opacity 0.4s ease; /* Tăng thời gian transition */
 }
 
 .author_infor .say1 {
     position: absolute;
     text-align: center;
     top: 30%;
+    left: 50%;
+    transform: translateX(-50%); /* Căn giữa hoàn hảo */
     width: 80%;
     opacity: 0;
-    transition: opacity 0.3s var(--transition);
+    animation: fadeCycle 5.6s ease 1s forwards;
+    transition: opacity 0.4s ease;
 }
+
+/* Hiệu ứng hover - đảm bảo infor luôn được kéo xuống */
+.author_infor:hover .infor,
+.author_infor:focus .infor,
+.author_infor.active .infor {
+    transform: translateY(100%) !important; /* Sử dụng !important để override animation */
+    opacity: 0 !important;
+    animation: none; /* Tắt animation khi hover */
+}
+
+.author_infor:hover .say1,
+.author_infor:focus .say1,
+.author_infor.active .say1 {
+    opacity: 1 !important;
+    animation: none; /* Tắt animation khi hover */
+}
+
+/* Hiệu ứng click/tap cho mobile */
+.author_infor:active .infor {
+    transform: translateY(100%);
+    opacity: 0;
+}
+
+.author_infor:active .say1 {
+    opacity: 1;
+}
+
+/* Animation cho .infor: trượt xuống rồi nổi lên */
+@keyframes slideCycle {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    18.75% { /* 0.3s / 1.6s */
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    37.5% { /* 0.6s / 1.6s */
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    56.25% { /* 0.9s / 1.6s */
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Animation cho .say1: hiện lên rồi mờ đi */
+@keyframes fadeCycle {
+    0% {
+        opacity: 0;
+    }
+    18.75% { /* 0.3s / 1.6s */
+        opacity: 1;
+    }
+    37.5% { /* 0.6s / 1.6s */
+        opacity: 1;
+    }
+    56.25% { /* 0.9s / 1.6s */
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Responsive - điều chỉnh cho màn hình nhỏ */
+@media (max-width: 768px) {
+    .author_infor .say1 {
+        width: 90%;
+        font-size: 0.9em;
+    }
+    
+    .author_infor .infor {
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    
+    .author_infor .say1 {
+        transition: opacity 0.3s ease;
+    }
+}
+
+/* Thêm hiệu ứng focus cho accessibility */
+.author_infor:focus {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+}
+
+/* Đảm bảo animation không bị gián đoạn khi hover */
+.author_infor:not(:hover):not(:focus):not(.active) .infor {
+    animation-play-state: running;
+}
+
+.author_infor:not(:hover):not(:focus):not(.active) .say1 {
+    animation-play-state: running;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .author_infor:before {
     background-size: cover;
