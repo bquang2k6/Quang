@@ -1,6 +1,6 @@
 // Tự động chuyển hướng sau 3 giây
 setTimeout(() => {
-    window.location.href = 'https://locket.quang-tech.space';
+    window.location.href = 'https://wangtech.top';
 }, 1000);
 
 // Hoặc có thể thêm một countdown hiển thị cho người dùng
@@ -27,7 +27,7 @@ const countdownTimer = setInterval(() => {
     
     if (countdown < 0) {
         clearInterval(countdownTimer);
-        window.location.href = 'https://locket.quang-tech.space';
+        window.location.href = 'https://locket.wangtech.top';
     }
 }, 1000);
 
